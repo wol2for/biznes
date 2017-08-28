@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – Бизнес-експерт</title>
+    <link rel="shortcut icon" href="~/favicon.ico">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+</head>
+<body>
+
+    @RenderBody()
+
+    <div class="block-form">
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-sm-12"><h2 class="textFooterMain">Возникли вопросы?</h2></div>
+                <div class="col-sm-12"><p class="textFooterMain"> Позвоните по тел. <span style="color: rgb(116, 94, 197); white-space:nowrap;">+38(099) 015-84-79</span></p></div>
+                <div class="col-sm-12"><p class="textFooterOr">или</p></div>
+                <div class="col-sm-12"><p style="font-size: 20px;" class="textFooterMain">Заполните форму и мы с вами свяжемся</p></div>
+                <div role="form">
+                    <div class="col-md-4">
+                        <input type="text" name="name-3" value="" size="40" class="formFooter" aria-required="true" aria-invalid="false" placeholder="Имя">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="tel" name="tel-3" value="" size="40" class="formFooter" aria-invalid="false" placeholder="Телефон">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="email" name="email-3" value="" size="40" class="formFooter" aria-required="true" aria-invalid="false" placeholder="Почта">
+                    </div>
+                    <div class="col-sm-12">
+                        <div style="margin-top: 20px; " class="more more2">
+                            <a style="display: table;font-size: 17px;" href="#" class="button-pipaluk button--inverted"><input style="font-size: 20px; background-color: rgba(102, 51, 153, 0); border: red;" type="submit" value="Отправить"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 0px; padding-top: 10px; padding-bottom: 5px;" class="block-footer">
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-sm-3">
+                        <p class="textforFooterF">МЕНЮ</p>
+                    <div class="textforFooterS">
+                        <p>Главная<br />
+                        Услуги<br />
+                        О нас<br />
+                        Новости<br />
+                        Документы<br />
+                        Контакты<br /></p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <p class="textforFooterF">АДРЕС</p>
+                    <div class="textforFooterS">
+                        <p>г. Днепр,</p>
+                        <p>ул. Сичеславская Набережная</p>
+                        <p>29, оф. 307</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <p class="textforFooterF">ТЕЛЕФОНЫ</p>
+                    <div class="textforFooterS">
+                        <p>+38 (056) 726-52-85<br />
+                           +38 (056) 726-56-63<br />
+                           +38 (095) 795-22-70<br /></p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <p class="textforFooterF">ПОЧТА</p>
+                    <div class="textforFooterS">
+                        <p>biznes.expert.01@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <hr style="margin-top: 8px; margin-bottom: 8px;" />
+                    <p style="text-align:center" class="textforFooterS">Copyright © 2017 ООО "Бизнес-Эксперт" All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="~/Content/lightbox.css" rel="stylesheet" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/prettySticky.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/lightbox-plus-jquery.min.js"></script>
+    <script src="~/Scripts/prettySticky.js"></script>
+    <script src="~/Scripts/jquery.flexslider.js"></script>
+    <script>
+        //Lightbox для лицензий
+    lightbox.option({
+        "resizeDuration": 200,
+        "wrapAround": true,
+        "alwaysShowNavOnTouchDevices": true,
+        "showImageNumberLabel": true,
+        "albumLabel": "Изображение %1 из %2",
+    });
+    </script>
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

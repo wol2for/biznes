@@ -1,0 +1,220 @@
+﻿
+@{
+    ViewBag.Title = "Съемка М 1:500 и др.";
+}
+
+<style>
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+
+    .dropdown-menu li:hover .sub-menu {
+        visibility: visible;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: inherit;
+    }
+
+    .nav-tabs .dropdown-menu,
+    .nav-pills .dropdown-menu,
+    .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .navbar .sub-menu:before {
+        border-bottom: 7px solid transparent;
+        border-left: none;
+        border-right: 7px solid rgba(0, 0, 0, 0.2);
+        border-top: 7px solid transparent;
+        left: -7px;
+        top: 10px;
+    }
+
+    .navbar .sub-menu:after {
+        border-top: 6px solid transparent;
+        border-left: none;
+        border-right: 6px solid #fff;
+        border-bottom: 6px solid transparent;
+        left: 10px;
+        top: 11px;
+        left: -6px;
+    }
+</style>
+
+<div id="home" class="banner about-banner page-breadcrumb">
+    <div class="banner-info">
+        <!--navigation-->
+        <div class="navbar navbar-fixed-top top-nav">
+            <nav>
+                <div class="container">
+                    <div class="navbar-header logo">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a href="@Url.Action("Index","Home")"><img src="~/Image/11112.png" /></a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div style="padding-right: 0px;" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-right">
+
+                            <li style="margin-right: 0px; margin-left: 0px; ">
+                                <a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="Главная">Главная</span></a>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="О нас">О нас<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu1">
+                                    <li><a href="@Url.Action("About","About")">О нас</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Licenses","About")">Лицензии</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle link-kumya active"><span data-letters="Услуги">Услуги<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu2">
+                                    <li>
+                                        <a href="@Url.Action("Geodetic","Services")">Геодезические работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("CaptureM","Geodetics")">Съемка М 1:500 и др.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("ExecutiveShooting","Geodetics")">Исполнительные съемки</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("GeideticsWorks","Geodetics")">Геодезические работы по инвентаризации и отводу земельных участков юр. и физ. лиц</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("TransferToNature","Geodetics")">Вынос в натуру границ земельных участков</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("LandManagement","Services")">Землеустроительные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("SectionUnion","LandManagements")">Раздел / Объединение земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AllocationLand", "LandManagements")">Разработка проекта отвода земельного участка</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPlot","LandManagements")">Подготовка документации для оформления договора аренды на земельный участок</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPrivatization","LandManagements")">Подготовка технической документации для приватизации земельного участкав</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AppointmenCadastralNumber","LandManagements")">Присвоение кадастрового номера</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("Evaluation","Services")">Оценочные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("EstimationLand","Evaluations")">Оценка земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PropertyValuation","Evaluations")">Оценка недвижимости</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationEquipment","Evaluations")">Оценка оборудования</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationCars","Evaluations")">Оценка автомобилей</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="Новости">Новости<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu3">
+                                    <li><a href="@Url.Action("New", "New")">Новости</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Articles", "New")">Статьи</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="Документы">Документы<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu4">
+                                    <li><a href=@Url.Action("Codex", "Documents")>Кодексы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Lex", "Documents")>Законы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Resolutions", "Documents")>Постановления Кабинета Министров</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;">
+                                <a href="@Url.Action("Contact","Home")" class="link-kumya">
+                                    <span data-letters="Контакты">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--//navigation-->
+        <div class="banner-text">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif;">Услуги</h2>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 0px;" class="container body-content">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-bottom: 0px;">
+            <p class="textLage">Съемка М 1:500 и др.</p>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+<div style="padding-top: 0px; padding-bottom: 50px;" class="welcome">
+    <div style="padding-top: 0px;" class="container body-content">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <img style="width: 100%;" src="~/Image/Evaluation/img_art_1-min.jpg">
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="col-sm-12" style="padding-top: 25px; padding-bottom: 25px; ">
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;">
+                    <span style="font-weight: bold;">Топографическая съемка (топосъемка)</span> — создание топографической карты или плана местности в цифровом виде и на бумажных носителях посредством измерений расстояний, 
+                    высот, углов и т.п. с помощью различных инструментов (наземная съемка), а также получение изображений земной поверхности с летательных аппаратов 
+                    (аэросъемка, космическая съемка). Необходима для проектирования, получения разрешения на строительство и cдачи в эксплуатацию объектов недвижимости.<br /><br />
+
+                    Сегодня топографическая съёмка (топосъёмка) является обязательной при строительстве зданий и сооружений. Она ещё необходима при прокладке коммуникаций, 
+                    а также в оформлении генеральных планов территорий. Если строительство предполагает постройку коттеджа или летнего частного дома, требуется топосъемка 
+                    земельного участка и местности.<br /><br />
+
+                    Различают геодезическyю топосъемку для составления топографических карт и планов крyпных масштабов (1:500, 1:1000, 1:2000, 1:5000), 
+                    мелких масштабов (1:10 000, 1:25 000 и т.д.), исполнительнyю и спелеотопосъемку. Материалы и данные, полученные по результатам инженерно-геодезических 
+                    изысканий, строители и проектировщики часто называют геоподосновой.<br /><br />
+
+                    <span style="font-weight: bold;">Геоподоснова</span> — это совокупность топографических планов различных масштабов на территорию участка строительства, которые служат основой для 
+                    разработки различной проектной документации (генеральных планов, проектов планировки и реконструкции, технических проектов, рабочих 
+                    чертежей и т.д.)<br /><br />
+
+                    <span style="font-weight: bold;">Топографическая съемка масштабом 1:500 (так называемая, геоподоснова) предназначается:</span><br />
+                </p>
+                <ul style="list-style-type: circle; padding-left: 35px;">
+                    <li><p class="textDisProduct"> для составления исполнительного, генерального плана участка строительства и рабочих чертежей многоэтажной капитальной застройки с густой сетью подземных коммуникаций, промышленных предприятий;</li>
+                    <li><p class="textDisProduct"> для решения вертикальной планировки;</li>
+                    <li><p class="textDisProduct"> для составления планов подземных сетей и сооружений;</li>
+                    <li><p class="textDisProduct"> для привязки зданий и сооружений к участкам строительства на застроенных территориях города;</li>
+                    <li><p class="textDisProduct"> для землеустройства, изыскания и проектирования железных и автомобильных дорог;</li>
+                    <li><p class="textDisProduct"> для других работ, требующих на проектно-изыскательской стадии высокой точности измерений и расчётов.</li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

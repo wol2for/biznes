@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "Оценка земельных участков";
+}
+<style>
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+
+    .dropdown-menu li:hover .sub-menu {
+        visibility: visible;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: inherit;
+    }
+
+    .nav-tabs .dropdown-menu,
+    .nav-pills .dropdown-menu,
+    .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .navbar .sub-menu:before {
+        border-bottom: 7px solid transparent;
+        border-left: none;
+        border-right: 7px solid rgba(0, 0, 0, 0.2);
+        border-top: 7px solid transparent;
+        left: -7px;
+        top: 10px;
+    }
+
+    .navbar .sub-menu:after {
+        border-top: 6px solid transparent;
+        border-left: none;
+        border-right: 6px solid #fff;
+        border-bottom: 6px solid transparent;
+        left: 10px;
+        top: 11px;
+        left: -6px;
+    }
+</style>
+
+
+<div id="home" class="banner about-banner page-breadcrumb">
+    <div class="banner-info">
+        <!--navigation-->
+        <div class="navbar navbar-fixed-top top-nav">
+            <nav>
+                <div class="container">
+                    <div class="navbar-header logo">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a href="@Url.Action("Index","Home")"><img src="~/Image/11112.png" /></a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div style="padding-right: 0px;" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-right">
+
+                            <li style="margin-right: 0px; margin-left: 0px; ">
+                                <a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="Главная">Главная</span></a>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="О нас">О нас<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu1">
+                                    <li><a href="@Url.Action("About","About")">О нас</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Licenses","About")">Лицензии</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle link-kumya active"><span data-letters="Услуги">Услуги<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu2">
+                                    <li>
+                                        <a href="@Url.Action("Geodetic","Services")">Геодезические работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("CaptureM","Geodetics")">Съемка М 1:500 и др.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("ExecutiveShooting","Geodetics")">Исполнительные съемки</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("GeideticsWorks","Geodetics")">Геодезические работы по инвентаризации и отводу земельных участков юр. и физ. лиц</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("TransferToNature","Geodetics")">Вынос в натуру границ земельных участков</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("LandManagement","Services")">Землеустроительные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("SectionUnion","LandManagements")">Раздел / Объединение земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AllocationLand", "LandManagements")">Разработка проекта отвода земельного участка</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPlot","LandManagements")">Подготовка документации для оформления договора аренды на земельный участок</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPrivatization","LandManagements")">Подготовка технической документации для приватизации земельного участкав</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AppointmenCadastralNumber","LandManagements")">Присвоение кадастрового номера</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("Evaluation","Services")">Оценочные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("EstimationLand","Evaluations")">Оценка земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PropertyValuation","Evaluations")">Оценка недвижимости</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationEquipment","Evaluations")">Оценка оборудования</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationCars","Evaluations")">Оценка автомобилей</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="Новости">Новости<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu3">
+                                    <li><a href="@Url.Action("New", "New")">Новости</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Articles", "New")">Статьи</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="Документы">Документы<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu4">
+                                    <li><a href=@Url.Action("Codex", "Documents")>Кодексы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Lex", "Documents")>Законы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Resolutions", "Documents")>Постановления Кабинета Министров</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;">
+                                <a href="@Url.Action("Contact","Home")" class="link-kumya">
+                                    <span data-letters="Контакты">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--//navigation-->
+        <div class="banner-text">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif;">Услуги</h2>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 0px;" class="container body-content">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-bottom: 0px;">
+            <p class="textLage">Оценка земельных участков</p>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+
+<div style="padding-top: 0px; padding-bottom: 50px;" class="welcome">
+    <div style="padding-top: 0px;" class="container body-content">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-4">
+                <img style="width: 100%;" src="~/Image/Evaluation/ef0090b6cf85659f9c6f19f87571a877-min.jpg">
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="col-sm-12" style="padding-top: 25px; padding-bottom: 25px; ">
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;">
+                    Рынок земли в Украине развивается стремительными темпами. В таких условиях экспертная денежная оценка земли становится особенно важной, поскольку без актуальной
+                    информации о рыночной стоимости земли невозможна успешная купля продажа земельных участков, оформление земли в собственность, наследование земельного участка и т.д.
+                    Для принятия экономически обоснованного и выгодного для Вас решения при купле-продаже земельных участков Вам необходимо точно знать стоимость земельного участка.
+                    Поэтому денежная оценка земли в этом случае является для Вас первоочередной задачей.<br /><br />
+
+                    <span style="font-weight: bold;">Денежная оценка земли необходима Вам для таких целей:</span></p>
+                     <ul style="list-style-type: circle; padding-left: 35px;">
+                         <li><p class="textDisProduct"> определение достоверной рыночной стоимости земли при оформлении земельного участка в аренду, передачи в залог, страховании, внесения в уставной фонд компании и пр.;</li>
+                         <li><p class="textDisProduct"> купля продажа земельных участков на самых выгодных для Вас условиях;</li>
+                         <li><p class="textDisProduct"> принятие выгодного, экономически обоснованного управленческого решения при проведении деловых операций;</li>
+                         <li><p class="textDisProduct"> оценка стоимости земельного участка при ликвидации, реорганизации или банкротстве предприятия;</li>
+                         <li><p class="textDisProduct"> оформление оптимально выгодного банковского кредита под залог земли;</li>
+                         <li><p class="textDisProduct"> приватизация земельных участков;</li>
+                         <li><p class="textDisProduct"> оценка стоимости земельного участка или права аренды земли в бухгалтерском учете;</li>
+                         <li><p class="textDisProduct"> снижение финансовых рисков при кредитовании;</li>
+                         <li><p class="textDisProduct"> оценка размера нанесенного ущерба в случае нарушения Ваших имущественных прав;</li>
+                         <li><p class="textDisProduct"> получение документального подтверждения (отчет по оценке земли), имеющего юридическую силу как в рамках судебного производства, так и при совершении сделки;</li>
+                         <li><p class="textDisProduct"> и множества других целей и задач.</li>
+                     </ul>
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;">
+                    <span style="font-weight: bold;">Оценка земли</span> — это определение рыночной стоимости земли или стоимости права аренды земельного участка. Рыночная стоимость земли зависит от местоположения земельного участка,
+                    влияния различных внешних факторов, спроса и предложения на местном рынке земли, и не может быть больше наиболее вероятной цены на покупку иного земельного участка эквивалентной полезности.
+                    Оценка стоимости земельного участка (денежная оценка земли) учитывает наличие различных коммуникаций, их качественный и количественный состав, а также возможность подключения
+                    к ним, в случае запланированного строительства объекта недвижимости на данном земельном участке. Рыночная стоимость земельного участка при застройке улучшениями значительно
+                    зависит от данных инженерно-геодезических и инженерно-геологических исследований. Эти данные о составе, свойствах и состоянии грунтов, совместно с данными о рельефе и
+                    ситуации местности, необходимы для планирования возможного строительства и определения затрат на застройку.<br />
+                    Стоимость права аренды земельного участка зависит от многих факторов, таких как права арендатора, срока действия права аренды, целевого назначения земельного участка,
+                    обременений права аренды и прав третьих лиц на объект оценки.<br /><br />
+
+                    <span style="font-weight: bold;">Информация, необходимая для проведения работ по денежной оценки земли:</span>
+                </p>
+                <ul style="list-style-type: circle; padding-left: 35px;">
+                    <li><p class="textDisProduct"> Правоустанавливающий документ на земельный участок (государственный акт на землю);</p></li>
+                    <li><p class="textDisProduct"> Сведения об ограничениях и обременениях земельного участка;</li>
+                    <li><p class="textDisProduct"> Сведения о состоянии и наличии инженерных коммуникаций.</li>
+                </ul>
+                <p  style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;"> 
+                При необходимости может быть затребована дополнительная информация для денежной оценки земли. Все вышеуказанные документы предоставляются в виде ксерокопий
+                    (нотариальное заверение необязательно). Информация от юридических лиц, которая представляется в виде справочной, подписывается ответственным лицом и скрепляется печатью. 
+                </p>    
+</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

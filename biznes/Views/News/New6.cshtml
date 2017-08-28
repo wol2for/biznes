@@ -1,0 +1,220 @@
+﻿
+@{
+    ViewBag.Title = "Как прописаться на даче";
+}
+
+<style>
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+
+    .dropdown-menu li:hover .sub-menu {
+        visibility: visible;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: inherit;
+    }
+
+    .nav-tabs .dropdown-menu,
+    .nav-pills .dropdown-menu,
+    .navbar .dropdown-menu {
+        margin-top: 0;
+    }
+
+    .navbar .sub-menu:before {
+        border-bottom: 7px solid transparent;
+        border-left: none;
+        border-right: 7px solid rgba(0, 0, 0, 0.2);
+        border-top: 7px solid transparent;
+        left: -7px;
+        top: 10px;
+    }
+
+    .navbar .sub-menu:after {
+        border-top: 6px solid transparent;
+        border-left: none;
+        border-right: 6px solid #fff;
+        border-bottom: 6px solid transparent;
+        left: 10px;
+        top: 11px;
+        left: -6px;
+    }
+</style>
+
+
+<div id="home" class="banner about-banner page-breadcrumb">
+    <div class="banner-info">
+        <!--navigation-->
+        <div class="navbar navbar-fixed-top top-nav">
+            <nav>
+                <div class="container">
+                    <div class="navbar-header logo">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a href="@Url.Action("Index","Home")"><img src="~/Image/11112.png" /></a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div style="padding-right: 0px;" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-right">
+
+                            <li style="margin-right: 0px; margin-left: 0px; ">
+                                <a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="Главная">Главная</span></a>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="О нас">О нас<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu1">
+                                    <li><a href="@Url.Action("About","About")">О нас</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Licenses","About")">Лицензии</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle link-kumya"><span data-letters="Услуги">Услуги<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu2">
+                                    <li>
+                                        <a href="@Url.Action("Geodetic","Services")">Геодезические работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("CaptureM","Geodetics")">Съемка М 1:500 и др.</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("ExecutiveShooting","Geodetics")">Исполнительные съемки</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("GeideticsWorks","Geodetics")">Геодезические работы по инвентаризации и отводу земельных участков юр. и физ. лиц</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("TransferToNature","Geodetics")">Вынос в натуру границ земельных участков</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("LandManagement","Services")">Землеустроительные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("SectionUnion","LandManagements")">Раздел / Объединение земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AllocationLand", "LandManagements")">Разработка проекта отвода земельного участка</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPlot","LandManagements")">Подготовка документации для оформления договора аренды на земельный участок</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PreparationDocumentationLandPrivatization","LandManagements")">Подготовка технической документации для приватизации земельного участкав</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("AppointmenCadastralNumber","LandManagements")">Присвоение кадастрового номера</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="@Url.Action("Evaluation","Services")">Оценочные работы</a>
+                                        <ul style="border-radius: 0px; width: 222px;" class="dropdown-menu sub-menu">
+                                            <li><a href="@Url.Action("EstimationLand","Evaluations")">Оценка земельных участков</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("PropertyValuation","Evaluations")">Оценка недвижимости</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationEquipment","Evaluations")">Оценка оборудования</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="@Url.Action("EvaluationCars","Evaluations")">Оценка автомобилей</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle active"><span data-letters="Новости">Новости<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu3">
+                                    <li><a href="@Url.Action("New", "New")">Новости</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Articles", "New")">Статьи</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;" class="dropdown">
+                                <a data-toggle="dropdown" class="link-kumya dropdown-toggle"><span data-letters="Документы">Документы<b class="caret"></b></span></a>
+                                <ul style="border-radius: 0px;" class="dropdown-menu" id="menu4">
+                                    <li><a href=@Url.Action("Codex", "Documents")>Кодексы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Lex", "Documents")>Законы</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href=@Url.Action("Resolutions", "Documents")>Постановления Кабинета Министров</a></li>
+                                </ul>
+                            </li>
+
+                            <li style="margin-right: 0px; margin-left: 0px;">
+                                <a href="@Url.Action("Contact","Home")" class="link-kumya">
+                                    <span data-letters="Контакты">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--//navigation-->
+        <div class="banner-text">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif;">Статьи</h2>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 0px;" class="container body-content">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 100px;margin-bottom: 60px;">
+            <p class="textLage hidden-xs">Как прописаться на даче</p>
+            <p style="font-size: 40px;" class="textLage visible-xs">Как прописаться на даче</p>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+
+<div style="padding-top: 0px; padding-bottom: 50px;" class="welcome">
+    <div style="padding-top: 0px;" class="container body-content">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 ">
+                <img style="width: 100%;" src="~/Image/News/publication_240333_imgafe05a51ea987a4b222716a219305143_620x0-min.jpg">
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-sm-12" style="padding-top: 25px; padding-bottom: 25px; ">
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;">
+                    Українці мають право перевести дачний будинок у житловий та зареєструватися там. Проте не всі знають, як це зробити та які документи знадобляться для такого 
+                    оформлення.<br /><br />
+
+                    За словами експертів, згідно з підписаним Президентом законом «Про внесення змін до деяких законодавчих актів України стосовно переведення садових і дачних 
+                    будинків у житлові та реєстрації у них місця проживання», українці можуть перевести дачні та садові будинки, що відповідають державним будівельним нормам, 
+                    у житлові будинки.<br /><br />
+
+                    Відповідно до постанови Кабміну про переведення дачних будинків у житлові, зробити це можна безкоштовно, звернувшись до органів місцевого самоврядування села, 
+                    селища, міста, з якими адміністративно пов’язані ті чи інші дачні поселення.<br /><br />
+
+                    Відтак, власник дачного будинку звертається до виконавчого органу місцевої ради за формою, визначеною Кабміном.<br /><br />
+
+                    До заяви треба додати:<br />
+                    
+                </p>
+                <ul style="list-style-type: disc; padding-left: 35px;">
+                    <li><p class="textDisProduct"> Копію документу про право власності на дачний або садовий будинок;</li>
+                    <li><p class="textDisProduct"> Письмову згоду співвласників на переведення дачного будинку у житловий;</li>
+                    <li><p class="textDisProduct"> Звіт про проведення техогляду дачного чи садового будинку, з висновком про його відповідність державним будівельним нормам.</li>
+                </ul>
+                <p style="font-family: 'Roboto Condensed', sans-serif; font-size: 18px;">
+                    Після проведення вказаної процедури садовому або дачному будинку присвоюється статус житлового. Після цього власник може прописатися у ньому.<br />
+                    <span style="font-weight: bold;"> <a target="_blank"  href="http://domik.ua/novosti/yak-propisatisya-na-dachi-n240333.html">Як прописатися на дачі. Источник: domik.ua</a></span>
+                </p>
+                    <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
